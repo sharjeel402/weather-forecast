@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {%load static%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Satisfy" type="text/css">
+  <link rel="stylesheet" href="{% static "css/base.css" %}"
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+  <a class="navbar-brand" href="/">Whether ForeCasting</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<div class='container'>
+<h1>Islamabad Whether</h1>
+<table class="table table-striped table-dark">
+        <thead>
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col">Day</th>
+               <th scope="col">Whether</th>
+               <th scope="col">Temperature</th>
+               <th scope="col">Wind</th>
+               <th scope="col">Humidity</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in whether_info %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{i.0}}</td>
+              <td>{{i.1}}</td>
+              <td>{{i.2}}</td>
+              <td>{{i.3}}</td>
+              <td>{{i.4}}</td>
+            </tr>
+        {%endfor%}
+
+        </tbody>
+     </table>
+<div/>
+
+</body>
